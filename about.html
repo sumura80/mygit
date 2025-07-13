@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GITについて - バージョン管理システム</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            background-color: #f5f5f5;
+            line-height: 1.6;
+        }
+        .header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+        }
+        .nav {
+            background-color: #34495e;
+            padding: 1rem 0;
+            text-align: center;
+        }
+        .nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1rem;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .nav a:hover {
+            background-color: #2c3e50;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .section {
+            background-color: white;
+            margin: 2rem 0;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .command-box {
+            background-color: #f8f9fa;
+            border-left: 4px solid #007bff;
+            padding: 1rem;
+            margin: 1rem 0;
+            font-family: 'Courier New', monospace;
+        }
+        .highlight {
+            background-color: #fff3cd;
+            padding: 1rem;
+            border-radius: 5px;
+            border-left: 4px solid #ffc107;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        .card {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border-top: 4px solid #28a745;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 0.5rem 1rem;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .back-link:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>GITについて</h1>
+        <p>バージョン管理システムの基本と活用方法</p>
+    </div>
+    
+    <div class="nav">
+        <a href="index.html">ホーム</a>
+        <a href="#what-is-git">GITとは</a>
+        <a href="#basic-commands">基本コマンド</a>
+        <a href="#benefits">利点</a>
+        <a href="#workflow">ワークフロー</a>
+    </div>
+
+    <div class="container">
+        <div class="section" id="what-is-git">
+            <h2>GITとは</h2>
+            <p>Gitは、分散型バージョン管理システムです。2005年にLinus Torvaldsによって開発され、現在では世界中の開発者に広く使用されています。</p>
+            
+            <div class="highlight">
+                <h3>主な特徴</h3>
+                <ul>
+                    <li><strong>分散型</strong>：各開発者がローカルに完全なリポジトリのコピーを持つ</li>
+                    <li><strong>高速</strong>：ローカルでの操作が高速</li>
+                    <li><strong>ブランチ機能</strong>：軽量なブランチ作成とマージ</li>
+                    <li><strong>データ整合性</strong>：SHA-1ハッシュによる完全性保証</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section" id="basic-commands">
+            <h2>基本コマンド</h2>
+            
+            <div class="grid">
+                <div class="card">
+                    <h3>初期化と設定</h3>
+                    <div class="command-box">
+                        git init<br>
+                        git config --global user.name "名前"<br>
+                        git config --global user.email "メール"
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h3>ファイル管理</h3>
+                    <div class="command-box">
+                        git add ファイル名<br>
+                        git add .<br>
+                        git commit -m "メッセージ"
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h3>履歴確認</h3>
+                    <div class="command-box">
+                        git log<br>
+                        git status<br>
+                        git diff
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h3>ブランチ操作</h3>
+                    <div class="command-box">
+                        git branch ブランチ名<br>
+                        git checkout ブランチ名<br>
+                        git merge ブランチ名
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section" id="benefits">
+            <h2>GITの利点</h2>
+            
+            <div class="grid">
+                <div class="card">
+                    <h3>🔄 バージョン管理</h3>
+                    <p>ファイルの変更履歴を詳細に記録し、いつでも過去の状態に戻すことができます。</p>
+                </div>
+                
+                <div class="card">
+                    <h3>👥 チーム開発</h3>
+                    <p>複数の開発者が同時に作業し、変更を統合することができます。</p>
+                </div>
+                
+                <div class="card">
+                    <h3>🛡️ 安全性</h3>
+                    <p>データの完全性が保証され、誤ってファイルを削除しても復元可能です。</p>
+                </div>
+                
+                <div class="card">
+                    <h3>⚡ 高速性</h3>
+                    <p>ローカルでの操作が高速で、ネットワークに依存しない作業が可能です。</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section" id="workflow">
+            <h2>基本的なワークフロー</h2>
+            
+            <div class="highlight">
+                <h3>1. リポジトリの初期化</h3>
+                <div class="command-box">
+                    git init
+                </div>
+            </div>
+            
+            <div class="highlight">
+                <h3>2. ファイルの追加</h3>
+                <div class="command-box">
+                    git add .
+                </div>
+            </div>
+            
+            <div class="highlight">
+                <h3>3. 変更のコミット</h3>
+                <div class="command-box">
+                    git commit -m "初回コミット"
+                </div>
+            </div>
+            
+            <div class="highlight">
+                <h3>4. リモートリポジトリとの連携</h3>
+                <div class="command-box">
+                    git remote add origin リポジトリURL<br>
+                    git push -u origin main
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>学習の次のステップ</h2>
+            <p>Gitの基本を理解したら、以下のトピックを学習することをお勧めします：</p>
+            <ul>
+                <li>ブランチ戦略（Git Flow、GitHub Flow）</li>
+                <li>プルリクエストとコードレビュー</li>
+                <li>コンフリクトの解決方法</li>
+                <li>GitHub、GitLabなどのホスティングサービス</li>
+                <li>GitフックとCI/CDパイプライン</li>
+            </ul>
+        </div>
+
+        <a href="index.html" class="back-link">← ホームに戻る</a>
+    </div>
+</body>
+</html> 
